@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#001C3D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Copa 2026">
+<meta name="description" content="Agenda completa Copa do Mundo FIFA 2026 — baixe para seu calendário">
+<title>⚽ Copa do Mundo 2026</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<style>
+  :root {
+    --bg: #020F2A;
+    --bg2: #031630;
+    --card: #071F3D;
+    --border: #0D3060;
+    --accent: #C8A84B;
+    --accent2: #1A8C4E;
+    --text: #E8EFF8;
+    --text2: #8AADCF;
+    --brazil: #009C3B;
+    --italy: #009246;
+    --red: #CF3737;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(180deg, #010B1F 0%, #021426 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 16px 0;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-icon { font-size: 28px; }
+  .logo-text h1 { font-size: 16px; font-weight: 700; color: var(--accent); letter-spacing: 0.3px; }
+  .logo-text p { font-size: 11px; color: var(--text2); }
+  .install-btn {
+    background: var(--accent); color: #020F2A;
+    border: none; border-radius: 8px; padding: 7px 12px;
+    font-size: 12px; font-weight: 700; cursor: pointer;
+    display: none; /* shown after service worker registers */
+  }
+  .install-btn.visible { display: block; }
+
+  /* LANG TABS */
+  .lang-tabs {
+    display: flex; gap: 4px;
+  }
+  .lang-tab {
+    flex: 1; padding: 10px 8px; text-align: center;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    border: none; background: transparent; color: var(--text2);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s; border-radius: 0;
+  }
+  .lang-tab.active { color: var(--text); border-bottom-color: var(--accent); }
+
+  /* DOWNLOAD BAR */
+  .download-bar {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .download-bar p { font-size: 12px; color: var(--text2); flex: 1; line-height: 1.4; }
+  .dl-btn {
+    background: linear-gradient(135deg, #1A8C4E, #0D6B3A);
+    color: #fff; border: none; border-radius: 10px;
+    padding: 10px 16px; font-size: 13px; font-weight: 700;
+    cursor: pointer; white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(26,140,78,0.4);
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .dl-btn:active { transform: scale(0.97); box-shadow: none; }
+  .dl-btn span { font-size: 15px; }
+
+  /* FILTER BAR */
+  .filter-bar {
+    padding: 10px 16px;
+    display: flex; gap: 6px; overflow-x: auto;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-chip {
+    background: var(--card); border: 1px solid var(--border);
+    color: var(--text2); border-radius: 20px;
+    padding: 5px 12px; font-size: 12px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    transition: all 0.15s;
+  }
+  .filter-chip.active { background: var(--accent); border-color: var(--accent); color: #020F2A; }
+
+  /* MATCH LIST */
+  .match-list { padding: 8px 12px 80px; }
+
+  .phase-header {
+    font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+    color: var(--text2); text-transform: uppercase;
+    padding: 16px 4px 8px;
+    border-bottom: 1px solid var(--border); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .phase-header .phase-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .date-group { margin-bottom: 4px; }
+  .date-label {
+    font-size: 11px; font-weight: 600; color: var(--text2);
+    padding: 10px 4px 4px;
+  }
+
+  .match-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 12px 14px;
+    margin-bottom: 6px; cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+  }
+  .match-card:active { transform: scale(0.99); }
+  .match-card:hover { border-color: #1A4A7A; }
+  .match-card.expanded { border-color: var(--accent); }
+
+  .match-top {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .match-time {
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    min-width: 42px; text-align: center;
+  }
+  .match-teams {
+    flex: 1; display: flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 600;
+  }
+  .team-name { flex: 1; }
+  .team-name.home { text-align: right; }
+  .team-name.away { text-align: left; }
+  .vs { color: var(--text2); font-size: 11px; font-weight: 400; flex-shrink: 0; }
+  .match-group {
+    font-size: 10px; font-weight: 700; color: var(--text2);
+    background: rgba(255,255,255,0.05); border-radius: 4px;
+    padding: 2px 5px; min-width: 28px; text-align: center;
+  }
+
+  .match-details {
+    display: none; padding-top: 10px;
+    border-top: 1px solid var(--border); margin-top: 10px;
+    font-size: 12px; color: var(--text2); line-height: 1.8;
+  }
+  .match-card.expanded .match-details { display: block; }
+  .match-details strong { color: var(--text); }
+  .broadcaster-list { margin-top: 4px; }
+  .broadcaster-tag {
+    display: inline-block; background: rgba(200,168,75,0.15);
+    border: 1px solid rgba(200,168,75,0.3); border-radius: 5px;
+    padding: 2px 7px; font-size: 11px; font-weight: 600;
+    color: var(--accent); margin: 2px 3px 2px 0;
+  }
+  .broadcaster-tag.free {
+    background: rgba(26,140,78,0.15);
+    border-color: rgba(26,140,78,0.3);
+    color: #4EC880;
+  }
+
+  /* FOOTER */
+  .footer-note {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+    text-align: center; font-size: 10px; color: var(--text2);
+  }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%);
+    background: #1A8C4E; color: #fff; border-radius: 20px;
+    padding: 10px 20px; font-size: 13px; font-weight: 600;
+    opacity: 0; transition: opacity 0.3s; pointer-events: none; white-space: nowrap;
+    z-index: 200;
+  }
+  .toast.show { opacity: 1; }
+
+  /* Search */
+  .search-wrap { padding: 0 12px 8px; }
+  .search-input {
+    width: 100%; background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text); padding: 9px 14px;
+    font-size: 14px; outline: none;
+  }
+  .search-input::placeholder { color: var(--text2); }
+  .search-input:focus { border-color: var(--accent); }
+
+  @media (min-width: 600px) {
+    .match-list { max-width: 600px; margin: 0 auto; }
+    .download-bar { max-width: 600px; margin: 0 auto; }
+    .filter-bar { max-width: 600px; margin: 0 auto; }
+    .search-wrap { max-width: 600px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-icon">🏆</div>
+      <div class="logo-text">
+        <h1 id="title-main">Copa do Mundo 2026</h1>
+        <p id="title-sub">EUA · México · Canadá</p>
+      </div>
+    </div>
+    <button class="install-btn" id="installBtn" onclick="installApp()">⬇ Instalar</button>
+  </div>
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="setLang('pt')" id="tab-pt">🇧🇷 Português</button>
+    <button class="lang-tab" onclick="setLang('it')" id="tab-it">🇮🇹 Italiano</button>
+  </div>
+</header>
+
+<div class="download-bar">
+  <p id="dl-text">Baixe todos os 104 jogos para o calendário do seu celular</p>
+  <button class="dl-btn" onclick="downloadICS()"><span>📅</span> <span id="dl-btn-text">Baixar .ics</span></button>
+</div>
+
+<div class="search-wrap">
+  <input class="search-input" id="searchInput" placeholder="🔍 Buscar time, grupo…" oninput="renderMatches()" autocomplete="off" autocorrect="off" spellcheck="false">
+</div>
+
+<div class="filter-bar" id="filterBar">
+  <button class="filter-chip active" onclick="setFilter('all')" data-filter="all" id="chip-all">Todos</button>
+  <button class="filter-chip" onclick="setFilter('GS')" data-filter="GS" id="chip-GS">Grupos</button>
+  <button class="filter-chip" onclick="setFilter('R32')" data-filter="R32" id="chip-R32">R32</button>
+  <button class="filter-chip" onclick="setFilter('R16')" data-filter="R16" id="chip-R16">Oitavas</button>
+  <button class="filter-chip" onclick="setFilter('QF')" data-filter="QF" id="chip-QF">Quartas</button>
+  <button class="filter-chip" onclick="setFilter('SF')" data-filter="SF" id="chip-SF">Semis</button>
+  <button class="filter-chip" onclick="setFilter('F')" data-filter="F" id="chip-F">Final</button>
+</div>
+
+<div class="match-list" id="matchList"></div>
+
+<div class="footer-note" id="footerNote">
+  Horários em BRT (Brasília, UTC-3) • Fonte: FIFA.com
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+
+const FLAGS = {
+  'BR':'🇧🇷','MX':'🇲🇽','ZA':'🇿🇦','KR':'🇰🇷','CZ':'🇨🇿',
+  'CA':'🇨🇦','BA':'🇧🇦','US':'🇺🇸','PY':'🇵🇾','QA':'🇶🇦',
+  'CH':'🇨🇭','HT':'🇭🇹','AU':'🇦🇺','TR':'🇹🇷','DE':'🇩🇪',
+  'CW':'🇨🇼','NL':'🇳🇱','JP':'🇯🇵','CI':'🇨🇮','EC':'🇪🇨',
+  'SE':'🇸🇪','TN':'🇹🇳','ES':'🇪🇸','CV':'🇨🇻','BE':'🇧🇪',
+  'EG':'🇪🇬','SA':'🇸🇦','UY':'🇺🇾','IR':'🇮🇷','NZ':'🇳🇿',
+  'FR':'🇫🇷','SN':'🇸🇳','IQ':'🇮🇶','NO':'🇳🇴','AR':'🇦🇷',
+  'DZ':'🇩🇿','AT':'🇦🇹','JO':'🇯🇴','PT':'🇵🇹','CD':'🇨🇩',
+  'HR':'🇭🇷','GH':'🇬🇭','PA':'🇵🇦','UZ':'🇺🇿','CO':'🇨🇴',
+  'MA':'🇲🇦','IT':'🇮🇹',
+  'GB-SCT':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','GB-ENG':'🏴󠁧󠁢󠁥󠁮󠁧󠁿'
+};
+
+function flag(code) { return FLAGS[code] || '🏳️'; }
+
+// Team names: [PT, IT]
+const NAMES = {
+  'BR':['Brasil','Brasile'],'MX':['México','Messico'],'ZA':['África do Sul','Sudafrica'],
+  'KR':['Coreia do Sul','Corea del Sud'],'CZ':['República Tcheca','Repubblica Ceca'],
+  'CA':['Canadá','Canada'],'BA':['Bósnia-Herzegovina','Bosnia-Erzegovina'],
+  'US':['Estados Unidos','Stati Uniti'],'PY':['Paraguai','Paraguay'],
+  'QA':['Qatar','Qatar'],'CH':['Suíça','Svizzera'],'HT':['Haiti','Haiti'],
+  'GB-SCT':['Escócia','Scozia'],'AU':['Austrália','Australia'],'TR':['Turquia','Turchia'],
+  'DE':['Alemanha','Germania'],'CW':['Curaçao','Curaçao'],'NL':['Países Baixos','Paesi Bassi'],
+  'JP':['Japão','Giappone'],'CI':["Costa do Marfim","Costa d'Avorio"],'EC':['Equador','Ecuador'],
+  'SE':['Suécia','Svezia'],'TN':['Tunísia','Tunisia'],'ES':['Espanha','Spagna'],
+  'CV':['Cabo Verde','Capo Verde'],'BE':['Bélgica','Belgio'],'EG':['Egito','Egitto'],
+  'SA':['Arábia Saudita','Arabia Saudita'],'UY':['Uruguai','Uruguay'],'IR':['Irã','Iran'],
+  'NZ':['Nova Zelândia','Nuova Zelanda'],'FR':['França','Francia'],'SN':['Senegal','Senegal'],
+  'IQ':['Iraque','Iraq'],'NO':['Noruega','Norvegia'],'AR':['Argentina','Argentina'],
+  'DZ':['Argélia','Algeria'],'AT':['Áustria','Austria'],'JO':['Jordânia','Giordania'],
+  'PT':['Portugal','Portogallo'],'CD':['Congo (RD)','Congo (RD)'],'HR':['Croácia','Croazia'],
+  'GB-ENG':['Inglaterra','Inghilterra'],'GH':['Gana','Ghana'],'PA':['Panamá','Panama'],
+  'UZ':['Uzbequistão','Uzbekistan'],'CO':['Colômbia','Colombia'],'MA':['Marrocos','Marocco'],
+};
+
+function name(code, lang) {
+  if (!code || !NAMES[code]) return lang === 'it' ? 'A definire' : 'A definir';
+  return NAMES[code][lang === 'it' ? 1 : 0];
+}
+
+// Venue names [PT, IT]
+const VENUES = {
+  'Nova York/NJ':['Nova York/NJ','New York/NJ'],
+  'Cidade do México':['Cidade do México','Città del Messico'],
+  'San Francisco':['San Francisco','San Francisco'],
+  'Los Angeles':['Los Angeles','Los Angeles'],
+  'Toronto':['Toronto','Toronto'],
+  'Boston':['Boston','Boston'],
+  'Vancouver':['Vancouver','Vancouver'],
+  'Houston':['Houston','Houston'],
+  'Dallas':['Dallas','Dallas'],
+  'Philadelphia':['Philadelphia','Philadelphia'],
+  'Monterrey':['Monterrey','Monterrey'],
+  'Atlanta':['Atlanta','Atlanta'],
+  'Seattle':['Seattle','Seattle'],
+  'Miami':['Miami','Miami'],
+  'Kansas City':['Kansas City','Kansas City'],
+  'Guadalajara':['Guadalajara','Guadalajara'],
+};
+function vname(v, lang) {
+  if (!VENUES[v]) return v;
+  return VENUES[v][lang === 'it' ? 1 : 0];
+}
+
+// MATCHES: [id, date, timeBRT, phase, group, homeCode, awayCode, venue]
+// phase: GS=group stage, R32=round of 32, R16=round of 16, QF=quarterfinals, SF=semifinals, 3P=third place, F=final
+const MATCHES = [
+  // === FASE DE GRUPOS ===
+  [1,'2026-06-11','16:00','GS','A','MX','ZA','Cidade do México'],
+  [2,'2026-06-11','23:00','GS','A','KR','CZ','Guadalajara'],
+  [3,'2026-06-12','16:00','GS','B','CA','BA','Toronto'],
+  [4,'2026-06-12','22:00','GS','D','US','PY','Los Angeles'],
+  [5,'2026-06-13','16:00','GS','B','QA','CH','San Francisco'],
+  [6,'2026-06-13','19:00','GS','C','BR','MA','Nova York/NJ'],
+  [7,'2026-06-13','22:00','GS','C','HT','GB-SCT','Boston'],
+  [8,'2026-06-14','01:00','GS','D','AU','TR','Vancouver'],
+  [9,'2026-06-14','14:00','GS','E','DE','CW','Houston'],
+  [10,'2026-06-14','17:00','GS','F','NL','JP','Dallas'],
+  [11,'2026-06-14','20:00','GS','E','CI','EC','Philadelphia'],
+  [12,'2026-06-14','23:00','GS','F','SE','TN','Monterrey'],
+  [13,'2026-06-15','13:00','GS','H','ES','CV','Atlanta'],
+  [14,'2026-06-15','16:00','GS','G','BE','EG','Seattle'],
+  [15,'2026-06-15','19:00','GS','H','SA','UY','Miami'],
+  [16,'2026-06-15','22:00','GS','G','IR','NZ','Los Angeles'],
+  [17,'2026-06-16','16:00','GS','I','FR','SN','Nova York/NJ'],
+  [18,'2026-06-16','19:00','GS','I','IQ','NO','Boston'],
+  [19,'2026-06-16','22:00','GS','J','AR','DZ','Kansas City'],
+  [20,'2026-06-17','01:00','GS','J','AT','JO','San Francisco'],
+  [21,'2026-06-17','14:00','GS','K','PT','CD','Houston'],
+  [22,'2026-06-17','17:00','GS','L','GB-ENG','HR','Dallas'],
+  [23,'2026-06-17','20:00','GS','L','GH','PA','Toronto'],
+  [24,'2026-06-17','23:00','GS','K','UZ','CO','Cidade do México'],
+  // 2ª rodada
+  [25,'2026-06-18','13:00','GS','A','CZ','ZA','Atlanta'],
+  [26,'2026-06-18','16:00','GS','B','CH','BA','Los Angeles'],
+  [27,'2026-06-18','19:00','GS','B','CA','QA','Vancouver'],
+  [28,'2026-06-18','22:00','GS','A','MX','KR','Guadalajara'],
+  [29,'2026-06-19','16:00','GS','D','US','AU','Seattle'],
+  [30,'2026-06-19','19:00','GS','C','GB-SCT','MA','Boston'],
+  [31,'2026-06-19','21:30','GS','C','BR','HT','Philadelphia'],
+  [32,'2026-06-20','00:00','GS','D','TR','PY','San Francisco'],
+  [33,'2026-06-20','14:00','GS','F','NL','SE','Houston'],
+  [34,'2026-06-20','17:00','GS','E','DE','CI','Toronto'],
+  [35,'2026-06-20','21:00','GS','E','EC','CW','Kansas City'],
+  [36,'2026-06-21','01:00','GS','F','TN','JP','Monterrey'],
+  [37,'2026-06-21','13:00','GS','H','ES','SA','Atlanta'],
+  [38,'2026-06-21','16:00','GS','G','BE','IR','Los Angeles'],
+  [39,'2026-06-21','19:00','GS','H','UY','CV','Miami'],
+  [40,'2026-06-21','22:00','GS','G','NZ','EG','Vancouver'],
+  [41,'2026-06-22','14:00','GS','J','AR','AT','Dallas'],
+  [42,'2026-06-22','18:00','GS','I','FR','IQ','Philadelphia'],
+  [43,'2026-06-22','21:00','GS','I','NO','SN','Nova York/NJ'],
+  [44,'2026-06-23','00:00','GS','J','JO','DZ','San Francisco'],
+  [45,'2026-06-23','14:00','GS','K','PT','UZ','Houston'],
+  [46,'2026-06-23','17:00','GS','L','GB-ENG','GH','Boston'],
+  [47,'2026-06-23','20:00','GS','L','PA','HR','Toronto'],
+  [48,'2026-06-23','23:00','GS','K','CO','CD','Guadalajara'],
+  // 3ª rodada (simultâneas)
+  [49,'2026-06-24','16:00','GS','B','CH','CA','Vancouver'],
+  [50,'2026-06-24','16:00','GS','B','BA','QA','Seattle'],
+  [51,'2026-06-24','19:00','GS','C','GB-SCT','BR','Miami'],
+  [52,'2026-06-24','19:00','GS','C','MA','HT','Atlanta'],
+  [53,'2026-06-24','22:00','GS','A','CZ','MX','Cidade do México'],
+  [54,'2026-06-24','22:00','GS','A','ZA','KR','Monterrey'],
+  [55,'2026-06-25','17:00','GS','E','CW','CI','Philadelphia'],
+  [56,'2026-06-25','17:00','GS','E','EC','DE','Nova York/NJ'],
+  [57,'2026-06-25','20:00','GS','F','JP','SE','Dallas'],
+  [58,'2026-06-25','20:00','GS','F','TN','NL','Kansas City'],
+  [59,'2026-06-25','23:00','GS','D','TR','US','Los Angeles'],
+  [60,'2026-06-25','23:00','GS','D','PY','AU','San Francisco'],
+  [61,'2026-06-26','16:00','GS','I','NO','FR','Boston'],
+  [62,'2026-06-26','16:00','GS','I','SN','IQ','Toronto'],
+  [63,'2026-06-26','21:00','GS','H','CV','SA','Houston'],
+  [64,'2026-06-26','21:00','GS','H','UY','ES','Guadalajara'],
+  [65,'2026-06-27','00:00','GS','G','EG','IR','Seattle'],
+  [66,'2026-06-27','00:00','GS','G','NZ','BE','Vancouver'],
+  [67,'2026-06-27','18:00','GS','L','PA','GB-ENG','Nova York/NJ'],
+  [68,'2026-06-27','18:00','GS','L','HR','GH','Philadelphia'],
+  [69,'2026-06-27','20:30','GS','K','CO','PT','Miami'],
+  [70,'2026-06-27','20:30','GS','K','CD','UZ','Atlanta'],
+  [71,'2026-06-27','23:00','GS','J','DZ','AT','Kansas City'],
+  [72,'2026-06-27','23:00','GS','J','JO','AR','Dallas'],
+  // === RODADA DE 32 ===
+  [73,'2026-06-28','16:00','R32','','','','Los Angeles'],
+  [74,'2026-06-29','14:00','R32','','','','Houston'],
+  [75,'2026-06-29','17:30','R32','','','','Boston'],
+  [76,'2026-06-29','22:00','R32','','','','Monterrey'],
+  [77,'2026-06-30','14:00','R32','','','','Dallas'],
+  [78,'2026-06-30','18:00','R32','','','','Nova York/NJ'],
+  [79,'2026-06-30','22:00','R32','','','','Cidade do México'],
+  [80,'2026-07-01','13:00','R32','','','','Atlanta'],
+  [81,'2026-07-01','17:00','R32','','','','Seattle'],
+  [82,'2026-07-01','21:00','R32','','','','San Francisco'],
+  [83,'2026-07-02','16:00','R32','','','','Los Angeles'],
+  [84,'2026-07-02','20:00','R32','','','','Toronto'],
+  [85,'2026-07-03','00:00','R32','','','','Vancouver'],
+  [86,'2026-07-03','15:00','R32','','','','Dallas'],
+  [87,'2026-07-03','17:00','R32','','','','Atlanta'],
+  [88,'2026-07-03','22:30','R32','','','','Kansas City'],
+  // === OITAVAS ===
+  [89,'2026-07-04','14:00','R16','','','','Houston'],
+  [90,'2026-07-04','18:00','R16','','','','Philadelphia'],
+  [91,'2026-07-05','17:00','R16','','','','Nova York/NJ'],
+  [92,'2026-07-05','21:00','R16','','','','Cidade do México'],
+  [93,'2026-07-06','15:00','R16','','','','Dallas'],
+  [94,'2026-07-06','20:00','R16','','','','Seattle'],
+  [95,'2026-07-07','13:00','R16','','','','Atlanta'],
+  [96,'2026-07-07','17:00','R16','','','','Vancouver'],
+  // === QUARTAS ===
+  [97,'2026-07-09','17:00','QF','','','','Boston'],
+  [98,'2026-07-10','16:00','QF','','','','Los Angeles'],
+  [99,'2026-07-11','18:00','QF','','','','Miami'],
+  [100,'2026-07-11','21:00','QF','','','','Kansas City'],
+  // === SEMIFINAIS ===
+  [101,'2026-07-14','16:00','SF','','','','Dallas'],
+  [102,'2026-07-15','16:00','SF','','','','Dallas'],
+  // === 3º LUGAR ===
+  [103,'2026-07-18','18:00','3P','','','','Miami'],
+  // === FINAL ===
+  [104,'2026-07-19','16:00','F','','','','Nova York/NJ'],
+];
+
+// IDs on Rai in Italy (free, 35 games approx.)
+// opener + Round of 32 + R16 + QF + SF + 3P + Final = 1+16+8+4+2+1+1=33
+const RAI_IDS = new Set([
+  1, // opener
+  73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88, // R32
+  89,90,91,92,93,94,95,96, // R16
+  97,98,99,100, // QF
+  101,102, // SF
+  103, // 3P
+  104, // Final
+]);
+
+// IDs on Globo/SBT in Brazil (main free games)
+// Brazil games + opener + QF onwards
+const GLOBO_IDS = new Set([
+  1, // opener
+  6,31,51, // Brazil group stage
+  97,98,99,100,101,102,103,104 // QF onwards
+]);
+// All games on Cazé TV
+
+// ============================================================
+// TIME UTILS
+// ============================================================
+
+function brtToItaly(timeBRT) {
+  // Italy CEST = BRT + 5h (UTC-3 → UTC+2)
+  const [h, m] = timeBRT.split(':').map(Number);
+  let ih = h + 5, nextDay = false;
+  if (ih >= 24) { ih -= 24; nextDay = true; }
+  return (nextDay ? '+1 ' : '') + String(ih).padStart(2,'0') + ':' + String(m).padStart(2,'0');
+}
+
+function brtToUTC(date, timeBRT) {
+  const [y, mo, d] = date.split('-').map(Number);
+  const [h, m] = timeBRT.split(':').map(Number);
+  let utcH = h + 3;
+  let dt = new Date(Date.UTC(y, mo-1, d, utcH, m, 0));
+  const pad = n => String(n).padStart(2,'0');
+  const Y = dt.getUTCFullYear(), Mo = dt.getUTCMonth()+1, D = dt.getUTCDate();
+  const H = dt.getUTCHours(), Mi = dt.getUTCMinutes();
+  return `${Y}${pad(Mo)}${pad(D)}T${pad(H)}${pad(Mi)}00Z`;
+}
+
+function displayDate(date, lang) {
+  const d = new Date(date + 'T12:00:00Z');
+  const opts = { weekday:'short', day:'numeric', month:'long' };
+  const loc = lang === 'it' ? 'it-IT' : 'pt-BR';
+  return d.toLocaleDateString(loc, opts);
+}
+
+// ============================================================
+// BROADCASTERS
+// ============================================================
+
+function getBroadcasters(id, lang) {
+  if (lang === 'pt') {
+    const res = [];
+    res.push({ name: 'CazéTV', free: true });
+    res.push({ name: 'N Sports', free: true });
+    if (GLOBO_IDS.has(id)) {
+      res.push({ name: 'Globo', free: true });
+      res.push({ name: 'SBT', free: true });
+      res.push({ name: 'SporTV', free: false });
+      res.push({ name: 'Globoplay', free: false });
+    }
+    return res;
+  } else {
+    const res = [];
+    res.push({ name: 'DAZN', free: false });
+    if (RAI_IDS.has(id)) {
+      res.push({ name: 'Rai 1', free: true });
+      res.push({ name: 'RaiPlay', free: true });
+    }
+    return res;
+  }
+}
+
+// ============================================================
+// STATE
+// ============================================================
+
+let currentLang = 'pt';
+let currentFilter = 'all';
+let expandedId = null;
+
+// ============================================================
+// PHASE LABELS
+// ============================================================
+
+const PHASE_LABELS = {
+  GS: { pt:'Fase de Grupos', it:'Fase a Gironi' },
+  R32: { pt:'Rodada de 32', it:'Turno dei 32' },
+  R16: { pt:'Oitavas de Final', it:'Ottavi di Finale' },
+  QF: { pt:'Quartas de Final', it:'Quarti di Finale' },
+  SF: { pt:'Semifinais', it:'Semifinali' },
+  '3P': { pt:'Disputa pelo 3º Lugar', it:'Finale 3° Posto' },
+  F: { pt:'🏆 Grande Final', it:'🏆 Finale' },
+};
+
+const FILTER_LABELS = {
+  all: { pt:'Todos', it:'Tutti' },
+  GS:  { pt:'Grupos', it:'Gironi' },
+  R32: { pt:'R32', it:'R32' },
+  R16: { pt:'Oitavas', it:'Ottavi' },
+  QF:  { pt:'Quartas', it:'Quarti' },
+  SF:  { pt:'Semis', it:'Semis' },
+  F:   { pt:'Final', it:'Finale' },
+};
+
+// ============================================================
+// RENDER
+// ============================================================
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('tab-pt').classList.toggle('active', lang === 'pt');
+  document.getElementById('tab-it').classList.toggle('active', lang === 'it');
+  document.documentElement.lang = lang === 'it' ? 'it' : 'pt-BR';
+
+  // Update filter chip labels
+  document.querySelectorAll('[data-filter]').forEach(el => {
+    const f = el.dataset.filter;
+    el.textContent = FILTER_LABELS[f]?.[lang] || f;
+  });
+
+  // Update download text
+  if (lang === 'pt') {
+    document.getElementById('dl-text').textContent = 'Baixe todos os 104 jogos para o calendário do seu celular';
+    document.getElementById('dl-btn-text').textContent = 'Baixar .ics';
+    document.getElementById('title-main').textContent = 'Copa do Mundo 2026';
+    document.getElementById('footerNote').textContent = 'Horários em BRT (Brasília, UTC-3) • Fonte: FIFA.com';
+  } else {
+    document.getElementById('dl-text').textContent = 'Scarica tutte le 104 partite nel calendario del tuo cellulare';
+    document.getElementById('dl-btn-text').textContent = 'Scarica .ics';
+    document.getElementById('title-main').textContent = 'Mondiali FIFA 2026';
+    document.getElementById('footerNote').textContent = 'Orari in CEST (Italia, UTC+2) • Fonte: FIFA.com';
+  }
+  document.getElementById('searchInput').placeholder = lang === 'it' ? '🔍 Cerca squadra, gruppo…' : '🔍 Buscar time, grupo…';
+
+  renderMatches();
+}
+
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('[data-filter]').forEach(el => {
+    el.classList.toggle('active', el.dataset.filter === f);
+  });
+  renderMatches();
+}
+
+function toggleMatch(id) {
+  expandedId = (expandedId === id) ? null : id;
+  renderMatches();
+}
+
+function renderMatches() {
+  const lang = currentLang;
+  const filter = currentFilter;
+  const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+
+  let filtered = MATCHES.filter(m => {
+    const [id,,, phase, group, hc, ac] = m;
+    if (filter !== 'all' && phase !== filter) return false;
+    if (q) {
+      const hn = name(hc, lang).toLowerCase();
+      const an = name(ac, lang).toLowerCase();
+      const g = group.toLowerCase();
+      if (!hn.includes(q) && !an.includes(q) && !g.includes(q) && !hc.toLowerCase().includes(q) && !ac.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+
+  // Group by phase then date
+  const grouped = {};
+  const phaseOrder = ['GS','R32','R16','QF','SF','3P','F'];
+
+  filtered.forEach(m => {
+    const [,,, phase] = m;
+    if (!grouped[phase]) grouped[phase] = {};
+    const dateKey = m[1];
+    if (!grouped[phase][dateKey]) grouped[phase][dateKey] = [];
+    grouped[phase][dateKey].push(m);
+  });
+
+  let html = '';
+  phaseOrder.forEach(phase => {
+    if (!grouped[phase]) return;
+    const pLabel = PHASE_LABELS[phase]?.[lang] || phase;
+    html += `<div class="phase-header"><span class="phase-dot"></span>${pLabel}</div>`;
+    Object.keys(grouped[phase]).sort().forEach(date => {
+      html += `<div class="date-group">`;
+      html += `<div class="date-label">${displayDate(date, lang)}</div>`;
+      grouped[phase][date].forEach(m => {
+        const [id, mdate, timeBRT, mphase, group, hc, ac, venue] = m;
+        const hName = name(hc, lang);
+        const aName = name(ac, lang);
+        const hFlag = hc ? flag(hc) : '❓';
+        const aFlag = ac ? flag(ac) : '❓';
+        const timeDisp = lang === 'it' ? brtToItaly(timeBRT) : timeBRT;
+        const gLabel = group || mphase;
+        const isExpanded = expandedId === id;
+        const broadcasters = getBroadcasters(id, lang);
+        const bHtml = broadcasters.map(b =>
+          `<span class="broadcaster-tag${b.free?' free':''}">${b.name}${b.free?' ✓':''}</span>`
+        ).join('');
+        const watchLabel = lang === 'it' ? 'Dove vedere' : 'Onde assistir';
+        const venueLabel = lang === 'it' ? 'Stadio' : 'Estádio';
+
+        html += `
+<div class="match-card${isExpanded?' expanded':''}" onclick="toggleMatch(${id})">
+  <div class="match-top">
+    <div class="match-time">${timeDisp}</div>
+    <div class="match-teams">
+      <span class="team-name home">${hFlag} ${hName}</span>
+      <span class="vs">vs</span>
+      <span class="team-name away">${aFlag} ${aName}</span>
+    </div>
+    <div class="match-group">${gLabel}</div>
+  </div>
+  <div class="match-details">
+    <div>📍 <strong>${venueLabel}:</strong> ${vname(venue, lang)}</div>
+    <div class="broadcaster-list">📺 <strong>${watchLabel}:</strong><br>${bHtml}</div>
+  </div>
+</div>`;
+      });
+      html += `</div>`;
+    });
+  });
+
+  if (!html) {
+    html = `<div style="text-align:center;color:var(--text2);padding:40px 20px">
+      ${lang === 'it' ? 'Nessun risultato trovato' : 'Nenhum jogo encontrado'}
+    </div>`;
+  }
+
+  document.getElementById('matchList').innerHTML = html;
+}
+
+// ============================================================
+// ICS GENERATOR
+// ============================================================
+
+function foldLine(line) {
+  if (line.length <= 75) return line;
+  let result = '', i = 0;
+  while (i < line.length) {
+    const chunk = line.slice(i, i + (i === 0 ? 75 : 74));
+    result += (i > 0 ? '\r\n ' : '') + chunk;
+    i += chunk.length;
+  }
+  return result;
+}
+
+function escapeICS(str) {
+  return str.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
+}
+
+function downloadICS() {
+  const lang = currentLang;
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Copa2026App//Copa do Mundo 2026//PT',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    lang === 'pt'
+      ? 'X-WR-CALNAME:⚽ Copa do Mundo 2026'
+      : 'X-WR-CALNAME:⚽ Mondiali FIFA 2026',
+    lang === 'pt'
+      ? 'X-WR-CALDESC:Todos os 104 jogos da Copa do Mundo 2026 com horários e transmissões'
+      : 'X-WR-CALDESC:Tutte le 104 partite dei Mondiali FIFA 2026 con orari e canali',
+    'X-WR-TIMEZONE:UTC',
+    'X-APPLE-CALENDAR-COLOR:#C8A84B',
+  ];
+
+  MATCHES.forEach(m => {
+    const [id, date, timeBRT, phase, group, hc, ac, venue] = m;
+    const hName = name(hc, lang);
+    const aName = name(ac, lang);
+    const hFlag = hc ? flag(hc) : '';
+    const aFlag = ac ? flag(ac) : '';
+    const dtStart = brtToUTC(date, timeBRT);
+    // End time: +2h (may extend for knockout but 2h is standard)
+    const dtEnd = brtToUTC(date, (() => {
+      const [h, mi] = timeBRT.split(':').map(Number);
+      const eh = h + 2, emi = mi;
+      if (eh >= 24) return `${String(eh-24).padStart(2,'0')}:${String(emi).padStart(2,'0')}`;
+      return `${String(eh).padStart(2,'0')}:${String(emi).padStart(2,'0')}`;
+    })());
+
+    const summary = hc
+      ? `${hFlag} ${hName} vs ${aFlag} ${aName}`
+      : (lang === 'it' ? `🏆 Mondiali 2026 - ${PHASE_LABELS[phase]?.it || phase}` : `🏆 Copa 2026 - ${PHASE_LABELS[phase]?.pt || phase}`);
+
+    const broadcasters = getBroadcasters(id, lang);
+    const bNames = broadcasters.map(b => b.name + (b.free ? ' (grátis)' : '')).join(', ');
+    const watchLabel = lang === 'it' ? 'Dove vedere' : 'Onde assistir';
+    const groupLabel = group ? (lang === 'it' ? `Gruppo ${group}` : `Grupo ${group}`) : (PHASE_LABELS[phase]?.[lang] || phase);
+    const descPT = `🏆 Copa do Mundo FIFA 2026\\n${groupLabel}\\n📍 ${vname(venue, lang)}\\n📺 ${watchLabel}: ${bNames}\\n\\n🌐 EUA · México · Canadá`;
+    const descIT = `🏆 Mondiali FIFA 2026\\n${groupLabel}\\n📍 ${vname(venue, lang)}\\n📺 ${watchLabel}: ${bNames}\\n\\n🌐 USA · Messico · Canada`;
+    const desc = lang === 'it' ? descIT : descPT;
+
+    lines.push('BEGIN:VEVENT');
+    lines.push(foldLine(`UID:wc2026-${id}@copa2026.app`));
+    lines.push(foldLine(`DTSTART:${dtStart}`));
+    lines.push(foldLine(`DTEND:${dtEnd}`));
+    lines.push(foldLine(`SUMMARY:${escapeICS(summary)}`));
+    lines.push(foldLine(`DESCRIPTION:${escapeICS(desc)}`));
+    lines.push(foldLine(`LOCATION:${escapeICS(vname(venue, lang))}`));
+    lines.push('STATUS:CONFIRMED');
+    lines.push('TRANSP:TRANSPARENT');
+    lines.push('END:VEVENT');
+  });
+
+  lines.push('END:VCALENDAR');
+
+  const content = lines.join('\r\n');
+  const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = lang === 'it' ? 'mondiali-2026-italia.ics' : 'copa-do-mundo-2026-brasil.ics';
+  a.click();
+  URL.revokeObjectURL(url);
+
+  showToast(lang === 'it' ? '📅 File .ics scaricato!' : '📅 Arquivo .ics baixado!');
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ============================================================
+// PWA INSTALL
+// ============================================================
+
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installBtn').classList.add('visible');
+});
+
+function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(() => {
+    deferredPrompt = null;
+    document.getElementById('installBtn').classList.remove('visible');
+  });
+}
+
+// Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// ============================================================
+// INIT
+// ============================================================
+
+renderMatches();
+</script>
+</body>
+</html>
