@@ -88,6 +88,37 @@
     transition: transform 0.1s, box-shadow 0.1s;
   }
   .dl-btn:active { transform: scale(0.97); box-shadow: none; }
+  .sub-btn {
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 10px;
+    padding: 10px 14px; font-size: 12px; font-weight: 700;
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .sub-btn:active { background: rgba(200,168,75,0.15); }
+  .live-badge {
+    display: inline-block; background: #cf3737; color: #fff;
+    font-size: 10px; font-weight: 800; border-radius: 4px;
+    padding: 1px 5px; letter-spacing: 0.5px; animation: pulse 1.2s infinite;
+    margin-right: 4px;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+  .score-badge {
+    font-size: 13px; font-weight: 800; color: #fff;
+    background: rgba(255,255,255,0.1); border-radius: 6px;
+    padding: 2px 8px; min-width: 40px; text-align: center; flex-shrink: 0;
+  }
+  .score-badge.ft { color: var(--accent2); background: rgba(26,140,78,0.15); }
+  .score-badge.live { color: #ff6b6b; background: rgba(207,55,55,0.15); }
+  .updated-label {
+    font-size: 10px; color: var(--text2); text-align: center;
+    padding: 4px 0 0; opacity: 0.7;
+  }
+  .sub-info {
+    font-size: 11px; color: var(--text2); line-height: 1.5;
+    background: rgba(200,168,75,0.07); border: 1px solid rgba(200,168,75,0.2);
+    border-radius: 8px; padding: 10px 12px; margin-top: 8px;
+  }
   .dl-btn span { font-size: 15px; }
 
   /* FILTER BAR */
@@ -234,9 +265,17 @@
   </div>
 </header>
 
-<div class="download-bar">
-  <p id="dl-text">Baixe todos os 104 jogos para o calendário do seu celular</p>
-  <button class="dl-btn" onclick="downloadICS()"><span>📅</span> <span id="dl-btn-text">Baixar .ics</span></button>
+<div class="download-bar" style="flex-direction:column;gap:8px">
+  <div style="display:flex;align-items:center;gap:10px;width:100%">
+    <p id="dl-text" style="flex:1">Baixe todos os 104 jogos para o calendário do seu celular</p>
+    <button class="dl-btn" onclick="downloadICS()"><span>📅</span> <span id="dl-btn-text">Baixar .ics</span></button>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;width:100%">
+    <p id="sub-text" style="flex:1;font-size:12px">Ou <strong style="color:var(--accent)">assine</strong> — o calendário atualiza sozinho com resultados e times do mata-mata</p>
+    <button class="sub-btn" onclick="subscribeCalendar()" id="sub-btn">🔔 Assinar</button>
+  </div>
+  <div id="sub-info" class="sub-info" style="display:none"></div>
+  <div class="updated-label" id="updatedLabel"></div>
 </div>
 
 <div class="search-wrap">
@@ -529,6 +568,27 @@ function getBroadcasters(id, lang) {
 }
 
 // ============================================================
+// LIVE DATA
+// ============================================================
+
+let liveData = { results: {}, knockout: {}, updated: '' };
+
+async function loadData() {
+  try {
+    const r = await fetch('data.json?t=' + Date.now());
+    if (r.ok) {
+      liveData = await r.json();
+      if (liveData.updated) {
+        const d = new Date(liveData.updated);
+        const label = document.getElementById('updatedLabel');
+        if (label) label.textContent = '🔄 ' + d.toLocaleString(currentLang === 'it' ? 'it-IT' : 'pt-BR');
+      }
+      renderMatches();
+    }
+  } catch(e) { /* offline ok */ }
+}
+
+// ============================================================
 // STATE
 // ============================================================
 
@@ -659,14 +719,33 @@ function renderMatches() {
         const watchLabel = lang === 'it' ? 'Dove vedere' : 'Onde assistir';
         const venueLabel = lang === 'it' ? 'Stadio' : 'Estádio';
 
+        // Live results
+        const res = liveData.results[String(id)] || {};
+        const ko = liveData.knockout?.[String(id)] || {};
+        const dispHc = ko.hc || hc;
+        const dispAc = ko.ac || ac;
+        const dispHName = dispHc ? name(dispHc, lang) : hName;
+        const dispAName = dispAc ? name(dispAc, lang) : aName;
+        const dispHFlag = dispHc ? flag(dispHc) : hFlag;
+        const dispAFlag = dispAc ? flag(dispAc) : aFlag;
+
+        let scoreBadge = '';
+        if (res.status === 'FT' && res.hs != null) {
+          scoreBadge = `<span class="score-badge ft">${res.hs}–${res.as}</span>`;
+        } else if (res.status === 'LIVE' && res.hs != null) {
+          scoreBadge = `<span class="score-badge live">🔴 ${res.hs}–${res.as}</span>`;
+        }
+        const liveBadge = res.status === 'LIVE'
+          ? `<span class="live-badge">AO VIVO</span>` : '';
+
         html += `
 <div class="match-card${isExpanded?' expanded':''}" onclick="toggleMatch(${id})">
   <div class="match-top">
-    <div class="match-time">${timeDisp}</div>
+    <div class="match-time">${liveBadge}${timeDisp}</div>
     <div class="match-teams">
-      <span class="team-name home">${hFlag} ${hName}</span>
-      <span class="vs">vs</span>
-      <span class="team-name away">${aFlag} ${aName}</span>
+      <span class="team-name home">${dispHFlag} ${dispHName}</span>
+      ${scoreBadge || `<span class="vs">vs</span>`}
+      <span class="team-name away">${dispAFlag} ${dispAName}</span>
     </div>
     <div class="match-group">${gLabel}</div>
   </div>
@@ -816,10 +895,50 @@ if ('serviceWorker' in navigator) {
 }
 
 // ============================================================
+// SUBSCRIBE CALENDAR
+// ============================================================
+
+function subscribeCalendar() {
+  const lang = currentLang;
+  const base = 'https://igormutton.github.io/copa-do-mundo-2026';
+  const icsUrl = `${base}/calendar-${lang === 'it' ? 'it' : 'pt'}.ics`;
+  const webcalUrl = icsUrl.replace('https://', 'webcal://');
+
+  const info = document.getElementById('sub-info');
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const isAndroid = /Android/.test(navigator.userAgent);
+
+  if (lang === 'pt') {
+    info.innerHTML = `
+      <strong>📲 Como assinar (atualiza automaticamente):</strong><br>
+      <strong>iPhone/iPad:</strong> <a href="${webcalUrl}" style="color:var(--accent)">Toque aqui para assinar →</a><br>
+      <strong>Android/Google:</strong> Adicione este endereço em Google Agenda → "Outras agendas" → "Por URL":<br>
+      <code style="font-size:10px;word-break:break-all;color:var(--accent)">${icsUrl}</code><br>
+      <em>O calendário atualiza com resultados e times do mata-mata automaticamente.</em>`;
+  } else {
+    info.innerHTML = `
+      <strong>📲 Come sottoscrivere (aggiornamento automatico):</strong><br>
+      <strong>iPhone/iPad:</strong> <a href="${webcalUrl}" style="color:var(--accent)">Tocca qui per sottoscrivere →</a><br>
+      <strong>Android/Google:</strong> Aggiungi in Google Calendar → "Altri calendari" → "Da URL":<br>
+      <code style="font-size:10px;word-break:break-all;color:var(--accent)">${icsUrl}</code><br>
+      <em>Il calendario si aggiorna automaticamente con risultati e squadre dei playoff.</em>`;
+  }
+  info.style.display = 'block';
+
+  // Try webcal on mobile
+  if (isIOS) {
+    window.location.href = webcalUrl;
+  }
+}
+
+// ============================================================
 // INIT
 // ============================================================
 
 renderMatches();
+loadData();
+// Refresh a cada 5 minutos
+setInterval(loadData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
