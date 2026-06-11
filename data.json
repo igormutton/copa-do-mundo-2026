@@ -1,11 +1,11 @@
 {
-  "updated": "2026-06-11T18:49:39.168352+00:00",
+  "updated": "2026-06-11T22:04:32.862944+00:00",
   "results": {
     "1": {
-      "hs": 0,
+      "hs": 2,
       "as": 0,
-      "status": "NS",
-      "detail": "Scheduled"
+      "status": "FT",
+      "detail": "FT"
     },
     "2": {
       "hs": 0,
