@@ -1,0 +1,36 @@
+name: ⚽ Atualizar Resultados Copa 2026
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'   # a cada 2 horas
+  workflow_dispatch:          # permite rodar manualmente
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Rodar update.py
+        run: python update.py
+
+      - name: Push mudanças
+        run: |
+          git config user.email "bot@copa2026.app"
+          git config user.name "Copa 2026 Bot 🤖"
+          git add data.json calendar-pt.ics calendar-it.ics || true
+          git diff --staged --quiet || (
+            git commit -m "update: resultados $(date -u +%Y-%m-%dT%H:%M)" &&
+            git push
+          )
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
