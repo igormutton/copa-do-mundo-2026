@@ -34,9 +34,9 @@ BEGIN:VEVENT
 UID:wc2026-3@copa2026.app
 DTSTART:20260612T190000Z
 DTEND:20260612T210000Z
-SUMMARY:🇨🇦 Canada vs 🇧🇦 Bosnia-Erz.
+SUMMARY:🇨🇦 Canada [1-1] vs 🇧🇦 Bosnia-Erz.
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo B\\n📍 Toronto\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 1-1
 LOCATION:Toronto
 STATUS:CONFIRMED
 SEQUENCE:1
