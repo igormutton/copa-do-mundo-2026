@@ -267,9 +267,10 @@
 
 <div class="download-bar" style="flex-direction:column;gap:8px">
   <div style="display:flex;align-items:center;gap:10px;width:100%">
-    <p id="dl-text" style="flex:1">Baixe todos os 104 jogos para o calendário do seu celular</p>
-    <button class="dl-btn" onclick="downloadICS()"><span>📅</span> <span id="dl-btn-text">Baixar .ics</span></button>
+    <p id="dl-text" style="flex:1">Adicione todos os 104 jogos ao seu calendário — atualiza automaticamente com resultados</p>
+    <button class="dl-btn" onclick="subscribeCalendar()" id="sub-btn">📅 <span id="dl-btn-text">Adicionar ao Calendário</span></button>
   </div>
+  <div id="sub-info" class="sub-info" style="display:none"></div>
   <div class="updated-label" id="updatedLabel"></div>
 </div>
 
@@ -905,18 +906,16 @@ function subscribeCalendar() {
 
   if (lang === 'pt') {
     info.innerHTML = `
-      <strong>📲 Como assinar (atualiza automaticamente):</strong><br>
-      <strong>iPhone/iPad:</strong> <a href="${webcalUrl}" style="color:var(--accent)">Toque aqui para assinar →</a><br>
-      <strong>Android/Google:</strong> Adicione este endereço em Google Agenda → "Outras agendas" → "Por URL":<br>
-      <code style="font-size:10px;word-break:break-all;color:var(--accent)">${icsUrl}</code><br>
-      <em>O calendário atualiza com resultados e times do mata-mata automaticamente.</em>`;
+      <strong>📲 Como adicionar ao calendário:</strong><br>
+      <strong>iPhone/iPad:</strong> <a href="${webcalUrl}" style="color:var(--accent)">Toque aqui →</a><br>
+      <strong>Android/Google Agenda:</strong> "Outras agendas" → "Por URL" → cole o endereço abaixo:<br>
+      <code style="font-size:10px;word-break:break-all;color:var(--accent)">${icsUrl}</code>`;
   } else {
     info.innerHTML = `
-      <strong>📲 Come sottoscrivere (aggiornamento automatico):</strong><br>
-      <strong>iPhone/iPad:</strong> <a href="${webcalUrl}" style="color:var(--accent)">Tocca qui per sottoscrivere →</a><br>
-      <strong>Android/Google:</strong> Aggiungi in Google Calendar → "Altri calendari" → "Da URL":<br>
-      <code style="font-size:10px;word-break:break-all;color:var(--accent)">${icsUrl}</code><br>
-      <em>Il calendario si aggiorna automaticamente con risultati e squadre dei playoff.</em>`;
+      <strong>📲 Come aggiungere al calendario:</strong><br>
+      <strong>iPhone/iPad:</strong> <a href="${webcalUrl}" style="color:var(--accent)">Tocca qui →</a><br>
+      <strong>Android/Google Calendar:</strong> "Altri calendari" → "Da URL" → incolla l'indirizzo qui sotto:<br>
+      <code style="font-size:10px;word-break:break-all;color:var(--accent)">${icsUrl}</code>`;
   }
   info.style.display = 'block';
 
