@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-12T23:21:46.327021+00:00",
+  "updated": "2026-06-13T04:12:25.078753+00:00",
   "results": {
     "1": {
       "hs": 2,
@@ -20,10 +20,10 @@
       "detail": "FT"
     },
     "4": {
-      "hs": 0,
-      "as": 0,
-      "status": "NS",
-      "detail": "Scheduled"
+      "hs": 4,
+      "as": 1,
+      "status": "FT",
+      "detail": "FT"
     }
   },
   "knockout": {}
