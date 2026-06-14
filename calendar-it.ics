@@ -67,9 +67,9 @@ BEGIN:VEVENT
 UID:wc2026-6@copa2026.app
 DTSTART:20260613T220000Z
 DTEND:20260614T000000Z
-SUMMARY:🇧🇷 Brasile 🔴 1-1 vs 🇲🇦 Marocco
+SUMMARY:🇧🇷 Brasile [1-1] vs 🇲🇦 Marocco
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo C\\n📍 Nova York/NJ\\n📺 Dove 
- vedere: DAZN\\n🔴 AO VIVO: 1-1
+ vedere: DAZN\\n✅ Resultado: 1-1
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -78,9 +78,9 @@ BEGIN:VEVENT
 UID:wc2026-7@copa2026.app
 DTSTART:20260614T010000Z
 DTEND:20260614T030000Z
-SUMMARY:🇭🇹 Haiti vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scozia
+SUMMARY:🇭🇹 Haiti [0-1] vs 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scozia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo C\\n📍 Boston\\n📺 Dove vedere
- : DAZN
+ : DAZN\\n✅ Resultado: 0-1
 LOCATION:Boston
 STATUS:CONFIRMED
 SEQUENCE:1
