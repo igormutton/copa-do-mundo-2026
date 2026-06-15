@@ -144,9 +144,9 @@ BEGIN:VEVENT
 UID:wc2026-13@copa2026.app
 DTSTART:20260615T160000Z
 DTEND:20260615T180000Z
-SUMMARY:🇪🇸 Spagna vs 🇨🇻 Capo Verde
+SUMMARY:🇪🇸 Spagna [0-0] vs 🇨🇻 Capo Verde
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo H\\n📍 Atlanta\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 0-0
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
