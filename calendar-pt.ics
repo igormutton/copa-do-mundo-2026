@@ -157,9 +157,9 @@ BEGIN:VEVENT
 UID:wc2026-14@copa2026.app
 DTSTART:20260615T190000Z
 DTEND:20260615T210000Z
-SUMMARY:🇧🇪 Bélgica vs 🇪🇬 Egito
+SUMMARY:🇧🇪 Bélgica [1-1] vs 🇪🇬 Egito
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo G\\n📍 Seattle\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports
+ ir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 1-1
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -168,9 +168,9 @@ BEGIN:VEVENT
 UID:wc2026-15@copa2026.app
 DTSTART:20260615T220000Z
 DTEND:20260616T000000Z
-SUMMARY:🇸🇦 Arábia Saudita vs 🇺🇾 Uruguai
+SUMMARY:🇸🇦 Arábia Saudita 🔴 0-0 vs 🇺🇾 Uruguai
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo H\\n📍 Miami\\n📺 Onde assistir
- : CazéTV (YouTube - grátis) + N Sports
+ : CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 0-0
 LOCATION:Miami
 STATUS:CONFIRMED
 SEQUENCE:1
