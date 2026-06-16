@@ -188,9 +188,9 @@ BEGIN:VEVENT
 UID:wc2026-17@copa2026.app
 DTSTART:20260616T190000Z
 DTEND:20260616T210000Z
-SUMMARY:🇫🇷 Francia 🔴 2-0 vs 🇸🇳 Senegal
+SUMMARY:🇫🇷 Francia [3-1] vs 🇸🇳 Senegal
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo I\\n📍 Nova York/NJ\\n📺 Dove 
- vedere: DAZN\\n🔴 AO VIVO: 2-0
+ vedere: DAZN\\n✅ Resultado: 3-1
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -199,9 +199,9 @@ BEGIN:VEVENT
 UID:wc2026-18@copa2026.app
 DTSTART:20260616T220000Z
 DTEND:20260617T000000Z
-SUMMARY:🇮🇶 Iraq vs 🇳🇴 Norvegia
+SUMMARY:🇮🇶 Iraq 🔴 1-2 vs 🇳🇴 Norvegia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo I\\n📍 Boston\\n📺 Dove vedere
- : DAZN
+ : DAZN\\n🔴 AO VIVO: 1-2
 LOCATION:Boston
 STATUS:CONFIRMED
 SEQUENCE:1
