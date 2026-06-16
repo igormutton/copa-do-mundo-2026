@@ -166,9 +166,9 @@ BEGIN:VEVENT
 UID:wc2026-15@copa2026.app
 DTSTART:20260615T220000Z
 DTEND:20260616T000000Z
-SUMMARY:🇸🇦 Arabia Saudita 🔴 0-0 vs 🇺🇾 Uruguay
+SUMMARY:🇸🇦 Arabia Saudita [1-1] vs 🇺🇾 Uruguay
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo H\\n📍 Miami\\n📺 Dove vedere:
-  DAZN\\n🔴 AO VIVO: 0-0
+  DAZN\\n✅ Resultado: 1-1
 LOCATION:Miami
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -177,9 +177,9 @@ BEGIN:VEVENT
 UID:wc2026-16@copa2026.app
 DTSTART:20260616T010000Z
 DTEND:20260616T030000Z
-SUMMARY:🇮🇷 Iran vs 🇳🇿 Nuova Zelanda
+SUMMARY:🇮🇷 Iran [2-2] vs 🇳🇿 Nuova Zelanda
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo G\\n📍 Los Angeles\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n✅ Resultado: 2-2
 LOCATION:Los Angeles
 STATUS:CONFIRMED
 SEQUENCE:1
