@@ -199,9 +199,9 @@ BEGIN:VEVENT
 UID:wc2026-18@copa2026.app
 DTSTART:20260616T220000Z
 DTEND:20260617T000000Z
-SUMMARY:🇮🇶 Iraq 🔴 1-2 vs 🇳🇴 Norvegia
+SUMMARY:🇮🇶 Iraq [1-4] vs 🇳🇴 Norvegia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo I\\n📍 Boston\\n📺 Dove vedere
- : DAZN\\n🔴 AO VIVO: 1-2
+ : DAZN\\n✅ Resultado: 1-4
 LOCATION:Boston
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -210,9 +210,9 @@ BEGIN:VEVENT
 UID:wc2026-19@copa2026.app
 DTSTART:20260617T010000Z
 DTEND:20260617T030000Z
-SUMMARY:🇦🇷 Argentina vs 🇩🇿 Algeria
+SUMMARY:🇦🇷 Argentina [3-0] vs 🇩🇿 Algeria
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo J\\n📍 Kansas City\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n✅ Resultado: 3-0
 LOCATION:Kansas City
 STATUS:CONFIRMED
 SEQUENCE:1
