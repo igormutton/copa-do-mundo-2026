@@ -234,9 +234,9 @@ BEGIN:VEVENT
 UID:wc2026-21@copa2026.app
 DTSTART:20260617T170000Z
 DTEND:20260617T190000Z
-SUMMARY:🇵🇹 Portugal 🔴 1-1 vs 🇨🇩 Congo (RD)
+SUMMARY:🇵🇹 Portugal [1-1] vs 🇨🇩 Congo (RD)
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo K\\n📍 Houston\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 1-1
+ ir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 1-1
 LOCATION:Houston
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -245,9 +245,9 @@ BEGIN:VEVENT
 UID:wc2026-22@copa2026.app
 DTSTART:20260617T200000Z
 DTEND:20260617T220000Z
-SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra vs 🇭🇷 Croácia
+SUMMARY:🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra [4-2] vs 🇭🇷 Croácia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo L\\n📍 Dallas\\n📺 Onde assisti
- r: CazéTV (YouTube - grátis) + N Sports
+ r: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 4-2
 LOCATION:Dallas
 STATUS:CONFIRMED
 SEQUENCE:1
