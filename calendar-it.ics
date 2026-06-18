@@ -276,9 +276,9 @@ BEGIN:VEVENT
 UID:wc2026-25@copa2026.app
 DTSTART:20260618T160000Z
 DTEND:20260618T180000Z
-SUMMARY:🇨🇿 Rep. Ceca vs 🇿🇦 Sudafrica
+SUMMARY:🇨🇿 Rep. Ceca [1-1] vs 🇿🇦 Sudafrica
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo A\\n📍 Atlanta\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 1-1
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
