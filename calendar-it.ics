@@ -287,9 +287,9 @@ BEGIN:VEVENT
 UID:wc2026-26@copa2026.app
 DTSTART:20260618T190000Z
 DTEND:20260618T210000Z
-SUMMARY:🇨🇭 Svizzera vs 🇧🇦 Bosnia-Erz.
+SUMMARY:🇨🇭 Svizzera [4-1] vs 🇧🇦 Bosnia-Erz.
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo B\\n📍 Los Angeles\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n✅ Resultado: 4-1
 LOCATION:Los Angeles
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -298,9 +298,9 @@ BEGIN:VEVENT
 UID:wc2026-27@copa2026.app
 DTSTART:20260618T220000Z
 DTEND:20260619T000000Z
-SUMMARY:🇨🇦 Canada vs 🇶🇦 Qatar
+SUMMARY:🇨🇦 Canada 🔴 0-0 vs 🇶🇦 Qatar
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo B\\n📍 Vancouver\\n📺 Dove ved
- ere: DAZN
+ ere: DAZN\\n🔴 AO VIVO: 0-0
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1
