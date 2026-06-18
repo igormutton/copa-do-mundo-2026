@@ -254,9 +254,9 @@ BEGIN:VEVENT
 UID:wc2026-23@copa2026.app
 DTSTART:20260617T230000Z
 DTEND:20260618T010000Z
-SUMMARY:🇬🇭 Ghana vs 🇵🇦 Panama
+SUMMARY:🇬🇭 Ghana [1-0] vs 🇵🇦 Panama
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo L\\n📍 Toronto\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 1-0
 LOCATION:Toronto
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -265,9 +265,9 @@ BEGIN:VEVENT
 UID:wc2026-24@copa2026.app
 DTSTART:20260618T020000Z
 DTEND:20260618T040000Z
-SUMMARY:🇺🇿 Uzbekistan vs 🇨🇴 Colombia
+SUMMARY:🇺🇿 Uzbekistan [1-3] vs 🇨🇴 Colombia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo K\\n📍 Cidade do México\\n📺 D
- ove vedere: DAZN
+ ove vedere: DAZN\\n✅ Resultado: 1-3
 LOCATION:Cidade do México
 STATUS:CONFIRMED
 SEQUENCE:1
