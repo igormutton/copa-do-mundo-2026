@@ -320,9 +320,9 @@ BEGIN:VEVENT
 UID:wc2026-29@copa2026.app
 DTSTART:20260619T190000Z
 DTEND:20260619T210000Z
-SUMMARY:🇺🇸 Stati Uniti vs 🇦🇺 Australia
+SUMMARY:🇺🇸 Stati Uniti [2-0] vs 🇦🇺 Australia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo D\\n📍 Seattle\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 2-0
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
