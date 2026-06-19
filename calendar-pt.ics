@@ -300,9 +300,9 @@ BEGIN:VEVENT
 UID:wc2026-27@copa2026.app
 DTSTART:20260618T220000Z
 DTEND:20260619T000000Z
-SUMMARY:🇨🇦 Canadá 🔴 0-0 vs 🇶🇦 Qatar
+SUMMARY:🇨🇦 Canadá [6-0] vs 🇶🇦 Qatar
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo B\\n📍 Vancouver\\n📺 Onde assi
- stir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 0-0
+ stir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 6-0
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -311,9 +311,9 @@ BEGIN:VEVENT
 UID:wc2026-28@copa2026.app
 DTSTART:20260619T010000Z
 DTEND:20260619T030000Z
-SUMMARY:🇲🇽 México vs 🇰🇷 Coreia do Sul
+SUMMARY:🇲🇽 México [1-0] vs 🇰🇷 Coreia do Sul
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo A\\n📍 Guadalajara\\n📺 Onde as
- sistir: CazéTV (YouTube - grátis) + N Sports
+ sistir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 1-0
 LOCATION:Guadalajara
 STATUS:CONFIRMED
 SEQUENCE:1
