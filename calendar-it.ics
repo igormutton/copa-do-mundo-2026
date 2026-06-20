@@ -364,9 +364,9 @@ BEGIN:VEVENT
 UID:wc2026-33@copa2026.app
 DTSTART:20260620T170000Z
 DTEND:20260620T190000Z
-SUMMARY:🇳🇱 Paesi Bassi vs 🇸🇪 Svezia
+SUMMARY:🇳🇱 Paesi Bassi 🔴 2-0 vs 🇸🇪 Svezia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo F\\n📍 Houston\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n🔴 AO VIVO: 2-0
 LOCATION:Houston
 STATUS:CONFIRMED
 SEQUENCE:1
