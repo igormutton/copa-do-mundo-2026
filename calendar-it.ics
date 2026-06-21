@@ -408,9 +408,9 @@ BEGIN:VEVENT
 UID:wc2026-37@copa2026.app
 DTSTART:20260621T160000Z
 DTEND:20260621T180000Z
-SUMMARY:🇪🇸 Spagna 🔴 4-0 vs 🇸🇦 Arabia Saudita
+SUMMARY:🇪🇸 Spagna [4-0] vs 🇸🇦 Arabia Saudita
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo H\\n📍 Atlanta\\n📺 Dove veder
- e: DAZN\\n🔴 AO VIVO: 4-0
+ e: DAZN\\n✅ Resultado: 4-0
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -419,9 +419,9 @@ BEGIN:VEVENT
 UID:wc2026-38@copa2026.app
 DTSTART:20260621T190000Z
 DTEND:20260621T210000Z
-SUMMARY:🇧🇪 Belgio vs 🇮🇷 Iran
+SUMMARY:🇧🇪 Belgio 🔴 0-0 vs 🇮🇷 Iran
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo G\\n📍 Los Angeles\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n🔴 AO VIVO: 0-0
 LOCATION:Los Angeles
 STATUS:CONFIRMED
 SEQUENCE:1

@@ -411,9 +411,9 @@ BEGIN:VEVENT
 UID:wc2026-37@copa2026.app
 DTSTART:20260621T160000Z
 DTEND:20260621T180000Z
-SUMMARY:🇪🇸 Espanha 🔴 4-0 vs 🇸🇦 Arábia Saudita
+SUMMARY:🇪🇸 Espanha [4-0] vs 🇸🇦 Arábia Saudita
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo H\\n📍 Atlanta\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 4-0
+ ir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 4-0
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -422,9 +422,9 @@ BEGIN:VEVENT
 UID:wc2026-38@copa2026.app
 DTSTART:20260621T190000Z
 DTEND:20260621T210000Z
-SUMMARY:🇧🇪 Bélgica vs 🇮🇷 Irã
+SUMMARY:🇧🇪 Bélgica 🔴 0-0 vs 🇮🇷 Irã
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo G\\n📍 Los Angeles\\n📺 Onde as
- sistir: CazéTV (YouTube - grátis) + N Sports
+ sistir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 0-0
 LOCATION:Los Angeles
 STATUS:CONFIRMED
 SEQUENCE:1
