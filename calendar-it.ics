@@ -408,9 +408,9 @@ BEGIN:VEVENT
 UID:wc2026-37@copa2026.app
 DTSTART:20260621T160000Z
 DTEND:20260621T180000Z
-SUMMARY:🇪🇸 Spagna vs 🇸🇦 Arabia Saudita
+SUMMARY:🇪🇸 Spagna 🔴 4-0 vs 🇸🇦 Arabia Saudita
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo H\\n📍 Atlanta\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n🔴 AO VIVO: 4-0
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
