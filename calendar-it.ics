@@ -397,9 +397,9 @@ BEGIN:VEVENT
 UID:wc2026-36@copa2026.app
 DTSTART:20260621T040000Z
 DTEND:20260621T060000Z
-SUMMARY:🇹🇳 Tunisia vs 🇯🇵 Giappone
+SUMMARY:🇹🇳 Tunisia [0-4] vs 🇯🇵 Giappone
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo F\\n📍 Monterrey\\n📺 Dove ved
- ere: DAZN
+ ere: DAZN\\n✅ Resultado: 0-4
 LOCATION:Monterrey
 STATUS:CONFIRMED
 SEQUENCE:1
