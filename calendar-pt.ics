@@ -455,9 +455,9 @@ BEGIN:VEVENT
 UID:wc2026-41@copa2026.app
 DTSTART:20260622T170000Z
 DTEND:20260622T190000Z
-SUMMARY:🇦🇷 Argentina 🔴 1-0 vs 🇦🇹 Áustria
+SUMMARY:🇦🇷 Argentina [2-0] vs 🇦🇹 Áustria
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo J\\n📍 Dallas\\n📺 Onde assisti
- r: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 1-0
+ r: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 2-0
 LOCATION:Dallas
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -466,9 +466,9 @@ BEGIN:VEVENT
 UID:wc2026-42@copa2026.app
 DTSTART:20260622T210000Z
 DTEND:20260622T230000Z
-SUMMARY:🇫🇷 França vs 🇮🇶 Iraque
+SUMMARY:🇫🇷 França 🔴 1-0 vs 🇮🇶 Iraque
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo I\\n📍 Philadelphia\\n📺 Onde a
- ssistir: CazéTV (YouTube - grátis) + N Sports
+ ssistir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 1-0
 LOCATION:Philadelphia
 STATUS:CONFIRMED
 SEQUENCE:1
