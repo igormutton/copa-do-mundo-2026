@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T18:01:44.523146+00:00",
+  "updated": "2026-06-23T21:45:21.496228+00:00",
   "results": {
     "1": {
       "hs": 2,
@@ -242,16 +242,16 @@
       "detail": "HT"
     },
     "45": {
-      "hs": 3,
+      "hs": 5,
       "as": 0,
-      "status": "LIVE",
-      "detail": "HT"
+      "status": "FT",
+      "detail": "FT"
     },
     "46": {
       "hs": 0,
       "as": 0,
-      "status": "NS",
-      "detail": "Scheduled"
+      "status": "LIVE",
+      "detail": "81'"
     },
     "47": {
       "hs": 0,
