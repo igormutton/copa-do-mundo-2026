@@ -466,9 +466,9 @@ BEGIN:VEVENT
 UID:wc2026-42@copa2026.app
 DTSTART:20260622T210000Z
 DTEND:20260622T230000Z
-SUMMARY:🇫🇷 França 🔴 1-0 vs 🇮🇶 Iraque
+SUMMARY:🇫🇷 França [3-0] vs 🇮🇶 Iraque
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo I\\n📍 Philadelphia\\n📺 Onde a
- ssistir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 1-0
+ ssistir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 3-0
 LOCATION:Philadelphia
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -477,9 +477,9 @@ BEGIN:VEVENT
 UID:wc2026-43@copa2026.app
 DTSTART:20260623T000000Z
 DTEND:20260623T020000Z
-SUMMARY:🇳🇴 Noruega vs 🇸🇳 Senegal
+SUMMARY:🇳🇴 Noruega [3-2] vs 🇸🇳 Senegal
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo I\\n📍 Nova York/NJ\\n📺 Onde a
- ssistir: CazéTV (YouTube - grátis) + N Sports
+ ssistir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 3-2
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -488,9 +488,9 @@ BEGIN:VEVENT
 UID:wc2026-44@copa2026.app
 DTSTART:20260623T030000Z
 DTEND:20260623T050000Z
-SUMMARY:🇯🇴 Jordânia vs 🇩🇿 Argélia
+SUMMARY:🇯🇴 Jordânia 🔴 1-0 vs 🇩🇿 Argélia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo J\\n📍 San Francisco\\n📺 Onde 
- assistir: CazéTV (YouTube - grátis) + N Sports
+ assistir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 1-0
 LOCATION:San Francisco
 STATUS:CONFIRMED
 SEQUENCE:1

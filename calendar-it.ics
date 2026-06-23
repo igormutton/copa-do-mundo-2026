@@ -463,9 +463,9 @@ BEGIN:VEVENT
 UID:wc2026-42@copa2026.app
 DTSTART:20260622T210000Z
 DTEND:20260622T230000Z
-SUMMARY:🇫🇷 Francia 🔴 1-0 vs 🇮🇶 Iraq
+SUMMARY:🇫🇷 Francia [3-0] vs 🇮🇶 Iraq
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo I\\n📍 Philadelphia\\n📺 Dove 
- vedere: DAZN\\n🔴 AO VIVO: 1-0
+ vedere: DAZN\\n✅ Resultado: 3-0
 LOCATION:Philadelphia
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -474,9 +474,9 @@ BEGIN:VEVENT
 UID:wc2026-43@copa2026.app
 DTSTART:20260623T000000Z
 DTEND:20260623T020000Z
-SUMMARY:🇳🇴 Norvegia vs 🇸🇳 Senegal
+SUMMARY:🇳🇴 Norvegia [3-2] vs 🇸🇳 Senegal
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo I\\n📍 Nova York/NJ\\n📺 Dove 
- vedere: DAZN
+ vedere: DAZN\\n✅ Resultado: 3-2
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -485,9 +485,9 @@ BEGIN:VEVENT
 UID:wc2026-44@copa2026.app
 DTSTART:20260623T030000Z
 DTEND:20260623T050000Z
-SUMMARY:🇯🇴 Giordania vs 🇩🇿 Algeria
+SUMMARY:🇯🇴 Giordania 🔴 1-0 vs 🇩🇿 Algeria
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo J\\n📍 San Francisco\\n📺 Dove
-  vedere: DAZN
+  vedere: DAZN\\n🔴 AO VIVO: 1-0
 LOCATION:San Francisco
 STATUS:CONFIRMED
 SEQUENCE:1
