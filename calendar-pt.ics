@@ -521,9 +521,9 @@ BEGIN:VEVENT
 UID:wc2026-47@copa2026.app
 DTSTART:20260623T230000Z
 DTEND:20260624T010000Z
-SUMMARY:🇵🇦 Panamá 🔴 0-0 vs 🇭🇷 Croácia
+SUMMARY:🇵🇦 Panamá [0-1] vs 🇭🇷 Croácia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo L\\n📍 Toronto\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 0-0
+ ir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 0-1
 LOCATION:Toronto
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -532,9 +532,9 @@ BEGIN:VEVENT
 UID:wc2026-48@copa2026.app
 DTSTART:20260624T020000Z
 DTEND:20260624T040000Z
-SUMMARY:🇨🇴 Colômbia vs 🇨🇩 Congo (RD)
+SUMMARY:🇨🇴 Colômbia [1-0] vs 🇨🇩 Congo (RD)
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo K\\n📍 Guadalajara\\n📺 Onde as
- sistir: CazéTV (YouTube - grátis) + N Sports
+ sistir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 1-0
 LOCATION:Guadalajara
 STATUS:CONFIRMED
 SEQUENCE:1
