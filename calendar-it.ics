@@ -540,9 +540,9 @@ BEGIN:VEVENT
 UID:wc2026-49@copa2026.app
 DTSTART:20260624T190000Z
 DTEND:20260624T210000Z
-SUMMARY:🇨🇭 Svizzera vs 🇨🇦 Canada
+SUMMARY:🇨🇭 Svizzera 🔴 0-0 vs 🇨🇦 Canada
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo B\\n📍 Vancouver\\n📺 Dove ved
- ere: DAZN
+ ere: DAZN\\n🔴 AO VIVO: 0-0
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -551,9 +551,9 @@ BEGIN:VEVENT
 UID:wc2026-50@copa2026.app
 DTSTART:20260624T190000Z
 DTEND:20260624T210000Z
-SUMMARY:🇧🇦 Bosnia-Erz. vs 🇶🇦 Qatar
+SUMMARY:🇧🇦 Bosnia-Erz. 🔴 2-1 vs 🇶🇦 Qatar
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo B\\n📍 Seattle\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n🔴 AO VIVO: 2-1
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
