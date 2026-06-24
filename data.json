@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T20:01:25.104183+00:00",
+  "updated": "2026-06-24T23:08:10.380869+00:00",
   "results": {
     "1": {
       "hs": 2,
@@ -266,28 +266,28 @@
       "detail": "FT"
     },
     "50": {
-      "hs": 2,
+      "hs": 3,
       "as": 1,
-      "status": "LIVE",
-      "detail": "HT"
+      "status": "FT",
+      "detail": "FT"
     },
     "49": {
-      "hs": 0,
-      "as": 0,
-      "status": "LIVE",
-      "detail": "HT"
+      "hs": 2,
+      "as": 1,
+      "status": "FT",
+      "detail": "FT"
     },
     "52": {
-      "hs": 0,
-      "as": 0,
-      "status": "NS",
-      "detail": "Scheduled"
+      "hs": 2,
+      "as": 2,
+      "status": "LIVE",
+      "detail": "HT"
     },
     "51": {
       "hs": 0,
-      "as": 0,
-      "status": "NS",
-      "detail": "Scheduled"
+      "as": 2,
+      "status": "LIVE",
+      "detail": "HT"
     },
     "53": {
       "hs": 0,

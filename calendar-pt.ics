@@ -543,9 +543,9 @@ BEGIN:VEVENT
 UID:wc2026-49@copa2026.app
 DTSTART:20260624T190000Z
 DTEND:20260624T210000Z
-SUMMARY:🇨🇭 Suíça 🔴 0-0 vs 🇨🇦 Canadá
+SUMMARY:🇨🇭 Suíça [2-1] vs 🇨🇦 Canadá
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo B\\n📍 Vancouver\\n📺 Onde assi
- stir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 0-0
+ stir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 2-1
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -554,9 +554,9 @@ BEGIN:VEVENT
 UID:wc2026-50@copa2026.app
 DTSTART:20260624T190000Z
 DTEND:20260624T210000Z
-SUMMARY:🇧🇦 Bósnia-Herz. 🔴 2-1 vs 🇶🇦 Qatar
+SUMMARY:🇧🇦 Bósnia-Herz. [3-1] vs 🇶🇦 Qatar
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo B\\n📍 Seattle\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 2-1
+ ir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 3-1
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -565,9 +565,10 @@ BEGIN:VEVENT
 UID:wc2026-51@copa2026.app
 DTSTART:20260624T220000Z
 DTEND:20260625T000000Z
-SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escócia vs 🇧🇷 Brasil
+SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escócia 🔴 0-2 vs 🇧🇷 Brasil
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo C\\n📍 Miami\\n📺 Onde assistir
- : CazéTV (YouTube - grátis) + N Sports + Globo + SBT + SporTV + Globoplay
+ : CazéTV (YouTube - grátis) + N Sports + Globo + SBT + SporTV + Globoplay\
+ \n🔴 AO VIVO: 0-2
 LOCATION:Miami
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -576,9 +577,9 @@ BEGIN:VEVENT
 UID:wc2026-52@copa2026.app
 DTSTART:20260624T220000Z
 DTEND:20260625T000000Z
-SUMMARY:🇲🇦 Marrocos vs 🇭🇹 Haiti
+SUMMARY:🇲🇦 Marrocos 🔴 2-2 vs 🇭🇹 Haiti
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo C\\n📍 Atlanta\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports
+ ir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 2-2
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
