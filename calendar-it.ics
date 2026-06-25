@@ -617,9 +617,9 @@ BEGIN:VEVENT
 UID:wc2026-56@copa2026.app
 DTSTART:20260625T200000Z
 DTEND:20260625T220000Z
-SUMMARY:🇪🇨 Ecuador vs 🇩🇪 Germania
+SUMMARY:🇪🇨 Ecuador 🔴 2-1 vs 🇩🇪 Germania
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo E\\n📍 Nova York/NJ\\n📺 Dove 
- vedere: DAZN
+ vedere: DAZN\\n🔴 AO VIVO: 2-1
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
