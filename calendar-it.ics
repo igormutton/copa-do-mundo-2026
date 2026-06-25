@@ -562,9 +562,9 @@ BEGIN:VEVENT
 UID:wc2026-51@copa2026.app
 DTSTART:20260624T220000Z
 DTEND:20260625T000000Z
-SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scozia 🔴 0-2 vs 🇧🇷 Brasile
+SUMMARY:🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scozia [0-3] vs 🇧🇷 Brasile
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo C\\n📍 Miami\\n📺 Dove vedere:
-  DAZN\\n🔴 AO VIVO: 0-2
+  DAZN\\n✅ Resultado: 0-3
 LOCATION:Miami
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -573,9 +573,9 @@ BEGIN:VEVENT
 UID:wc2026-52@copa2026.app
 DTSTART:20260624T220000Z
 DTEND:20260625T000000Z
-SUMMARY:🇲🇦 Marocco 🔴 2-2 vs 🇭🇹 Haiti
+SUMMARY:🇲🇦 Marocco [4-2] vs 🇭🇹 Haiti
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo C\\n📍 Atlanta\\n📺 Dove veder
- e: DAZN\\n🔴 AO VIVO: 2-2
+ e: DAZN\\n✅ Resultado: 4-2
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -584,9 +584,9 @@ BEGIN:VEVENT
 UID:wc2026-53@copa2026.app
 DTSTART:20260625T010000Z
 DTEND:20260625T030000Z
-SUMMARY:🇨🇿 Rep. Ceca vs 🇲🇽 Messico
+SUMMARY:🇨🇿 Rep. Ceca [0-3] vs 🇲🇽 Messico
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo A\\n📍 Cidade do México\\n📺 D
- ove vedere: DAZN
+ ove vedere: DAZN\\n✅ Resultado: 0-3
 LOCATION:Cidade do México
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -595,9 +595,9 @@ BEGIN:VEVENT
 UID:wc2026-54@copa2026.app
 DTSTART:20260625T010000Z
 DTEND:20260625T030000Z
-SUMMARY:🇿🇦 Sudafrica vs 🇰🇷 Corea del Sud
+SUMMARY:🇿🇦 Sudafrica [1-0] vs 🇰🇷 Corea del Sud
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo A\\n📍 Monterrey\\n📺 Dove ved
- ere: DAZN
+ ere: DAZN\\n✅ Resultado: 1-0
 LOCATION:Monterrey
 STATUS:CONFIRMED
 SEQUENCE:1
