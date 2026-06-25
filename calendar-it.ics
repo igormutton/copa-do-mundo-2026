@@ -617,9 +617,9 @@ BEGIN:VEVENT
 UID:wc2026-56@copa2026.app
 DTSTART:20260625T200000Z
 DTEND:20260625T220000Z
-SUMMARY:🇪🇨 Ecuador 🔴 2-1 vs 🇩🇪 Germania
+SUMMARY:🇪🇨 Ecuador [2-1] vs 🇩🇪 Germania
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo E\\n📍 Nova York/NJ\\n📺 Dove 
- vedere: DAZN\\n🔴 AO VIVO: 2-1
+ vedere: DAZN\\n✅ Resultado: 2-1
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -628,9 +628,9 @@ BEGIN:VEVENT
 UID:wc2026-57@copa2026.app
 DTSTART:20260625T230000Z
 DTEND:20260626T010000Z
-SUMMARY:🇯🇵 Giappone vs 🇸🇪 Svezia
+SUMMARY:🇯🇵 Giappone 🔴 0-0 vs 🇸🇪 Svezia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo F\\n📍 Dallas\\n📺 Dove vedere
- : DAZN
+ : DAZN\\n🔴 AO VIVO: 0-0
 LOCATION:Dallas
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -639,9 +639,9 @@ BEGIN:VEVENT
 UID:wc2026-58@copa2026.app
 DTSTART:20260625T230000Z
 DTEND:20260626T010000Z
-SUMMARY:🇹🇳 Tunisia vs 🇳🇱 Paesi Bassi
+SUMMARY:🇹🇳 Tunisia 🔴 0-2 vs 🇳🇱 Paesi Bassi
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo F\\n📍 Kansas City\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n🔴 AO VIVO: 0-2
 LOCATION:Kansas City
 STATUS:CONFIRMED
 SEQUENCE:1
