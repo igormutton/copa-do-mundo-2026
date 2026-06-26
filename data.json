@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T23:22:04.707570+00:00",
+  "updated": "2026-06-26T04:06:06.755989+00:00",
   "results": {
     "1": {
       "hs": 2,
@@ -308,22 +308,22 @@
       "detail": "FT"
     },
     "57": {
-      "hs": 0,
-      "as": 0,
-      "status": "LIVE",
-      "detail": "21'"
+      "hs": 1,
+      "as": 1,
+      "status": "FT",
+      "detail": "FT"
     },
     "58": {
-      "hs": 0,
-      "as": 2,
-      "status": "LIVE",
-      "detail": "22'"
+      "hs": 1,
+      "as": 3,
+      "status": "FT",
+      "detail": "FT"
     },
     "60": {
       "hs": 0,
       "as": 0,
-      "status": "NS",
-      "detail": "Scheduled"
+      "status": "FT",
+      "detail": "FT"
     }
   },
   "knockout": {}

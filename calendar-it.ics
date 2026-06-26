@@ -628,9 +628,9 @@ BEGIN:VEVENT
 UID:wc2026-57@copa2026.app
 DTSTART:20260625T230000Z
 DTEND:20260626T010000Z
-SUMMARY:🇯🇵 Giappone 🔴 0-0 vs 🇸🇪 Svezia
+SUMMARY:🇯🇵 Giappone [1-1] vs 🇸🇪 Svezia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo F\\n📍 Dallas\\n📺 Dove vedere
- : DAZN\\n🔴 AO VIVO: 0-0
+ : DAZN\\n✅ Resultado: 1-1
 LOCATION:Dallas
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -639,9 +639,9 @@ BEGIN:VEVENT
 UID:wc2026-58@copa2026.app
 DTSTART:20260625T230000Z
 DTEND:20260626T010000Z
-SUMMARY:🇹🇳 Tunisia 🔴 0-2 vs 🇳🇱 Paesi Bassi
+SUMMARY:🇹🇳 Tunisia [1-3] vs 🇳🇱 Paesi Bassi
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo F\\n📍 Kansas City\\n📺 Dove v
- edere: DAZN\\n🔴 AO VIVO: 0-2
+ edere: DAZN\\n✅ Resultado: 1-3
 LOCATION:Kansas City
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -661,9 +661,9 @@ BEGIN:VEVENT
 UID:wc2026-60@copa2026.app
 DTSTART:20260626T020000Z
 DTEND:20260626T040000Z
-SUMMARY:🇵🇾 Paraguay vs 🇦🇺 Australia
+SUMMARY:🇵🇾 Paraguay [0-0] vs 🇦🇺 Australia
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo D\\n📍 San Francisco\\n📺 Dove
-  vedere: DAZN
+  vedere: DAZN\\n✅ Resultado: 0-0
 LOCATION:San Francisco
 STATUS:CONFIRMED
 SEQUENCE:1
