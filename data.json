@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27T21:09:29.509950+00:00",
+  "updated": "2026-06-27T23:06:59.595017+00:00",
   "results": {
     "1": {
       "hs": 2,
@@ -362,16 +362,16 @@
       "detail": "FT"
     },
     "68": {
-      "hs": 0,
-      "as": 0,
-      "status": "LIVE",
-      "detail": "8'"
+      "hs": 2,
+      "as": 1,
+      "status": "FT",
+      "detail": "FT"
     },
     "67": {
       "hs": 0,
-      "as": 0,
-      "status": "LIVE",
-      "detail": "9'"
+      "as": 2,
+      "status": "FT",
+      "detail": "FT"
     },
     "69": {
       "hs": 0,

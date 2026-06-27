@@ -738,9 +738,9 @@ BEGIN:VEVENT
 UID:wc2026-67@copa2026.app
 DTSTART:20260627T210000Z
 DTEND:20260627T230000Z
-SUMMARY:🇵🇦 Panama 🔴 0-0 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inghilterra
+SUMMARY:🇵🇦 Panama [0-2] vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inghilterra
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo L\\n📍 Nova York/NJ\\n📺 Dove 
- vedere: DAZN\\n🔴 AO VIVO: 0-0
+ vedere: DAZN\\n✅ Resultado: 0-2
 LOCATION:Nova York/NJ
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -749,9 +749,9 @@ BEGIN:VEVENT
 UID:wc2026-68@copa2026.app
 DTSTART:20260627T210000Z
 DTEND:20260627T230000Z
-SUMMARY:🇭🇷 Croazia 🔴 0-0 vs 🇬🇭 Ghana
+SUMMARY:🇭🇷 Croazia [2-1] vs 🇬🇭 Ghana
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo L\\n📍 Philadelphia\\n📺 Dove 
- vedere: DAZN\\n🔴 AO VIVO: 0-0
+ vedere: DAZN\\n✅ Resultado: 2-1
 LOCATION:Philadelphia
 STATUS:CONFIRMED
 SEQUENCE:1
