@@ -716,9 +716,9 @@ BEGIN:VEVENT
 UID:wc2026-65@copa2026.app
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:🇪🇬 Egitto 🔴 1-1 vs 🇮🇷 Iran
+SUMMARY:🇪🇬 Egitto [1-1] vs 🇮🇷 Iran
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo G\\n📍 Seattle\\n📺 Dove veder
- e: DAZN\\n🔴 AO VIVO: 1-1
+ e: DAZN\\n✅ Resultado: 1-1
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -727,9 +727,9 @@ BEGIN:VEVENT
 UID:wc2026-66@copa2026.app
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:🇳🇿 Nuova Zelanda 🔴 0-1 vs 🇧🇪 Belgio
+SUMMARY:🇳🇿 Nuova Zelanda [1-5] vs 🇧🇪 Belgio
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo G\\n📍 Vancouver\\n📺 Dove ved
- ere: DAZN\\n🔴 AO VIVO: 0-1
+ ere: DAZN\\n✅ Resultado: 1-5
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1
