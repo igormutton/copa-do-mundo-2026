@@ -694,9 +694,9 @@ BEGIN:VEVENT
 UID:wc2026-63@copa2026.app
 DTSTART:20260627T000000Z
 DTEND:20260627T020000Z
-SUMMARY:🇨🇻 Capo Verde vs 🇸🇦 Arabia Saudita
+SUMMARY:🇨🇻 Capo Verde [0-0] vs 🇸🇦 Arabia Saudita
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo H\\n📍 Houston\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 0-0
 LOCATION:Houston
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -705,9 +705,9 @@ BEGIN:VEVENT
 UID:wc2026-64@copa2026.app
 DTSTART:20260627T000000Z
 DTEND:20260627T020000Z
-SUMMARY:🇺🇾 Uruguay vs 🇪🇸 Spagna
+SUMMARY:🇺🇾 Uruguay [0-1] vs 🇪🇸 Spagna
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo H\\n📍 Guadalajara\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n✅ Resultado: 0-1
 LOCATION:Guadalajara
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -716,9 +716,9 @@ BEGIN:VEVENT
 UID:wc2026-65@copa2026.app
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:🇪🇬 Egitto vs 🇮🇷 Iran
+SUMMARY:🇪🇬 Egitto 🔴 1-1 vs 🇮🇷 Iran
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo G\\n📍 Seattle\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n🔴 AO VIVO: 1-1
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -727,9 +727,9 @@ BEGIN:VEVENT
 UID:wc2026-66@copa2026.app
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:🇳🇿 Nuova Zelanda vs 🇧🇪 Belgio
+SUMMARY:🇳🇿 Nuova Zelanda 🔴 0-1 vs 🇧🇪 Belgio
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo G\\n📍 Vancouver\\n📺 Dove ved
- ere: DAZN
+ ere: DAZN\\n🔴 AO VIVO: 0-1
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1

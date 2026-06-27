@@ -698,9 +698,9 @@ BEGIN:VEVENT
 UID:wc2026-63@copa2026.app
 DTSTART:20260627T000000Z
 DTEND:20260627T020000Z
-SUMMARY:🇨🇻 Cabo Verde vs 🇸🇦 Arábia Saudita
+SUMMARY:🇨🇻 Cabo Verde [0-0] vs 🇸🇦 Arábia Saudita
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo H\\n📍 Houston\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports
+ ir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 0-0
 LOCATION:Houston
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -709,9 +709,9 @@ BEGIN:VEVENT
 UID:wc2026-64@copa2026.app
 DTSTART:20260627T000000Z
 DTEND:20260627T020000Z
-SUMMARY:🇺🇾 Uruguai vs 🇪🇸 Espanha
+SUMMARY:🇺🇾 Uruguai [0-1] vs 🇪🇸 Espanha
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo H\\n📍 Guadalajara\\n📺 Onde as
- sistir: CazéTV (YouTube - grátis) + N Sports
+ sistir: CazéTV (YouTube - grátis) + N Sports\\n✅ Resultado: 0-1
 LOCATION:Guadalajara
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -720,9 +720,9 @@ BEGIN:VEVENT
 UID:wc2026-65@copa2026.app
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:🇪🇬 Egito vs 🇮🇷 Irã
+SUMMARY:🇪🇬 Egito 🔴 1-1 vs 🇮🇷 Irã
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo G\\n📍 Seattle\\n📺 Onde assist
- ir: CazéTV (YouTube - grátis) + N Sports
+ ir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 1-1
 LOCATION:Seattle
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -731,9 +731,9 @@ BEGIN:VEVENT
 UID:wc2026-66@copa2026.app
 DTSTART:20260627T030000Z
 DTEND:20260627T050000Z
-SUMMARY:🇳🇿 Nova Zelândia vs 🇧🇪 Bélgica
+SUMMARY:🇳🇿 Nova Zelândia 🔴 0-1 vs 🇧🇪 Bélgica
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGrupo G\\n📍 Vancouver\\n📺 Onde assi
- stir: CazéTV (YouTube - grátis) + N Sports
+ stir: CazéTV (YouTube - grátis) + N Sports\\n🔴 AO VIVO: 0-1
 LOCATION:Vancouver
 STATUS:CONFIRMED
 SEQUENCE:1
