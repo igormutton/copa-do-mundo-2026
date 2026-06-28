@@ -760,9 +760,9 @@ BEGIN:VEVENT
 UID:wc2026-69@copa2026.app
 DTSTART:20260627T233000Z
 DTEND:20260628T013000Z
-SUMMARY:🇨🇴 Colombia vs 🇵🇹 Portogallo
+SUMMARY:🇨🇴 Colombia [0-0] vs 🇵🇹 Portogallo
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo K\\n📍 Miami\\n📺 Dove vedere:
-  DAZN
+  DAZN\\n✅ Resultado: 0-0
 LOCATION:Miami
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -771,9 +771,9 @@ BEGIN:VEVENT
 UID:wc2026-70@copa2026.app
 DTSTART:20260627T233000Z
 DTEND:20260628T013000Z
-SUMMARY:🇨🇩 Congo (RD) vs 🇺🇿 Uzbekistan
+SUMMARY:🇨🇩 Congo (RD) [3-1] vs 🇺🇿 Uzbekistan
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo K\\n📍 Atlanta\\n📺 Dove veder
- e: DAZN
+ e: DAZN\\n✅ Resultado: 3-1
 LOCATION:Atlanta
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -782,9 +782,9 @@ BEGIN:VEVENT
 UID:wc2026-71@copa2026.app
 DTSTART:20260628T020000Z
 DTEND:20260628T040000Z
-SUMMARY:🇩🇿 Algeria vs 🇦🇹 Austria
+SUMMARY:🇩🇿 Algeria [3-3] vs 🇦🇹 Austria
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo J\\n📍 Kansas City\\n📺 Dove v
- edere: DAZN
+ edere: DAZN\\n✅ Resultado: 3-3
 LOCATION:Kansas City
 STATUS:CONFIRMED
 SEQUENCE:1
@@ -793,9 +793,9 @@ BEGIN:VEVENT
 UID:wc2026-72@copa2026.app
 DTSTART:20260628T020000Z
 DTEND:20260628T040000Z
-SUMMARY:🇯🇴 Giordania vs 🇦🇷 Argentina
+SUMMARY:🇯🇴 Giordania [1-3] vs 🇦🇷 Argentina
 DESCRIPTION:🏆 Copa do Mundo FIFA 2026\\nGruppo J\\n📍 Dallas\\n📺 Dove vedere
- : DAZN
+ : DAZN\\n✅ Resultado: 1-3
 LOCATION:Dallas
 STATUS:CONFIRMED
 SEQUENCE:1
